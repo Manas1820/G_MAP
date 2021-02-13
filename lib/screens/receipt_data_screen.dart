@@ -1,5 +1,6 @@
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:flutter/material.dart';
+import 'package:hack_app/Utils/Parsing.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
@@ -26,18 +27,19 @@ class _ReceiptDataState extends State<ReceiptData> {
     FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(pickedImage);
     TextRecognizer textRecognizer = FirebaseVision.instance.textRecognizer();
     VisionText visionText = await textRecognizer.processImage(visionImage);
-
-    for (TextBlock block in visionText.blocks) {
-      for (TextLine line in block.lines) {
-        for (TextElement word in line.elements) {
-          setState(() {
-            text = text + word.text + ' ';
-          });
-        }
-        text = text + '\n';
-      }
-    }
+    await getReceiptInfo(visionText);
     textRecognizer.close();
+  }
+
+  Future getReceiptInfo(visionText) async {
+    var text = ConfirmHelper.getText(visionText);
+    var info = ConfirmHelper.getItems(text);
+
+    setState(() {
+      receiptInfo = info;
+      receiptReady = true;
+    });
+    // return;
   }
 
   @override
@@ -62,21 +64,21 @@ class _ReceiptDataState extends State<ReceiptData> {
                     fit: BoxFit.cover,
                   ),
                 ))
-              : Container(),
-          SizedBox(height: 10.0),
-          Center(
-            child: FlatButton.icon(
-              icon: Icon(
-                Icons.photo_camera,
-                size: 100,
-              ),
-              label: Text(''),
-              textColor: Theme.of(context).primaryColor,
-              onPressed: () async {
-                pickImage();
-              },
-            ),
-          ),
+              : Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: const [
+                      BoxShadow(blurRadius: 20),
+                    ],
+                  ),
+                  margin: EdgeInsets.fromLTRB(0, 0, 0, 8),
+                  height: 250,
+                  child: Center(
+                    child: Text(
+                      "Upload a Image",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  )),
           SizedBox(height: 10.0),
           SizedBox(height: 10.0),
           text == ''
@@ -92,6 +94,17 @@ class _ReceiptDataState extends State<ReceiptData> {
                   ),
                 ),
         ],
+      ),
+      floatingActionButton: FlatButton.icon(
+        icon: Icon(
+          Icons.photo_camera,
+          size: 20,
+        ),
+        label: Text(''),
+        textColor: Theme.of(context).primaryColor,
+        onPressed: () {
+          pickImage();
+        },
       ),
     );
   }
