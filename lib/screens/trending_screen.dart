@@ -95,14 +95,12 @@ class _TrendingPageState extends State<TrendingPage> with TickerProviderStateMix
                             color: Colors.white),
                         child: Column(
                           children: [
-                            SizedBox(height: 60.0),
-                            Material(
-                              elevation: 10.0,
-                              borderRadius: BorderRadius.circular(40.0),
-                              child: CircleAvatar(
-                                backgroundColor: Colors.black54,
-                                radius: 40.0,
-                                backgroundImage: AssetImage('images/avatar.png'),
+                            SizedBox(height: 80.0),
+                            Text(
+                              'TOP 3',
+                              style: GoogleFonts.rambla(
+                                color: Colors.black,
+                                fontSize: 40.0,
                               ),
                             ),
                             SizedBox(
@@ -120,21 +118,23 @@ class _TrendingPageState extends State<TrendingPage> with TickerProviderStateMix
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.only(
+                                              top: 8.0, bottom: 8.0, left: 25.0),
                                           child: Text(
-                                            'Name',
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
+                                            'AAPL',
+                                            style: GoogleFonts.rambla(
+                                                color: Colors.black, fontSize: 20.0),
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.only(
+                                              top: 8.0, bottom: 8.0, right: 40.0),
                                           child: Text(
-                                            'Pisa Noyak',
+                                            '273.33',
                                             style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
+                                                color: Colors.teal[300],
+                                                fontSize: 15.0,
+                                                fontWeight: FontWeight.bold),
                                           ),
                                         ),
                                       ],
@@ -143,22 +143,31 @@ class _TrendingPageState extends State<TrendingPage> with TickerProviderStateMix
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            'Email',
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
+                                        Container(
+                                          margin: EdgeInsets.only(left: 16.0),
+                                          child: Material(
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                            color: Color(0xffEBF9FF),
+                                            child: Padding(
+                                              padding: const EdgeInsets.symmetric(
+                                                  vertical: 4.0, horizontal: 8.0),
+                                              child: Text(
+                                                'view details',
+                                                style: TextStyle(
+                                                    color: Colors.blue,
+                                                    fontSize: 15.0),
+                                              ),
+                                            ),
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.only(
+                                              top: 8.0, bottom: 8.0, right: 40.0),
                                           child: Text(
-                                            'pisanoyak@gmail.com',
+                                            '-20',
                                             style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
+                                                color: Colors.black, fontSize: 15.0),
                                           ),
                                         ),
                                       ],
@@ -168,7 +177,7 @@ class _TrendingPageState extends State<TrendingPage> with TickerProviderStateMix
                               ),
                             ),
                             SizedBox(
-                              height: 10.0,
+                              height: 20.0,
                             ),
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 25.0),
@@ -182,45 +191,23 @@ class _TrendingPageState extends State<TrendingPage> with TickerProviderStateMix
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.only(
+                                              top: 8.0, bottom: 8.0, left: 25.0),
                                           child: Text(
-                                            'User ID',
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
+                                            'MSOFT',
+                                            style: GoogleFonts.rambla(
+                                                color: Colors.black, fontSize: 20.0),
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.only(
+                                              top: 8.0, bottom: 8.0, right: 40.0),
                                           child: Text(
-                                            '1029-1736-1273',
+                                            '273.33',
                                             style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            'Phone',
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            '+91 9999999999',
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
+                                                color: Colors.teal[300],
+                                                fontSize: 15.0,
+                                                fontWeight: FontWeight.bold),
                                           ),
                                         ),
                                       ],
@@ -229,82 +216,31 @@ class _TrendingPageState extends State<TrendingPage> with TickerProviderStateMix
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            'Gender',
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
+                                        Container(
+                                          margin: EdgeInsets.only(left: 16.0),
+                                          child: Material(
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                            color: Color(0xffEBF9FF),
+                                            child: Padding(
+                                              padding: const EdgeInsets.symmetric(
+                                                  vertical: 4.0, horizontal: 8.0),
+                                              child: Text(
+                                                'view details',
+                                                style: TextStyle(
+                                                    color: Colors.blue,
+                                                    fontSize: 15.0),
+                                              ),
+                                            ),
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.only(
+                                              top: 8.0, bottom: 8.0, right: 40.0),
                                           child: Text(
-                                            'Female',
+                                            '-20',
                                             style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 10.0),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 25.0),
-                              child: Material(
-                                elevation: 15.0,
-                                borderRadius: BorderRadius.circular(10.0),
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            'Name',
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            'Pisa Noyak',
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            'Email',
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text(
-                                            'pisanoyak@gmail.com',
-                                            style: TextStyle(
-                                                color: Colors.black54,
-                                                fontSize: 15.0),
+                                                color: Colors.black, fontSize: 15.0),
                                           ),
                                         ),
                                       ],
@@ -313,7 +249,78 @@ class _TrendingPageState extends State<TrendingPage> with TickerProviderStateMix
                                 ),
                               ),
                             ),
-                            SizedBox(height: 10.0),
+                            SizedBox(height: 20.0),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 25.0),
+                              child: Material(
+                                elevation: 15.0,
+                                borderRadius: BorderRadius.circular(10.0),
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 8.0, bottom: 8.0, left: 25.0),
+                                          child: Text(
+                                            'GGL',
+                                            style: GoogleFonts.rambla(
+                                                color: Colors.black, fontSize: 20.0),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 8.0, bottom: 8.0, right: 40.0),
+                                          child: Text(
+                                            '273.33',
+                                            style: TextStyle(
+                                                color: Colors.teal[300],
+                                                fontSize: 15.0,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(left: 16.0),
+                                          child: Material(
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                            color: Color(0xffEBF9FF),
+                                            child: Padding(
+                                              padding: const EdgeInsets.symmetric(
+                                                  vertical: 4.0, horizontal: 8.0),
+                                              child: Text(
+                                                'view details',
+                                                style: TextStyle(
+                                                    color: Colors.blue,
+                                                    fontSize: 15.0),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 8.0, bottom: 8.0, right: 40.0),
+                                          child: Text(
+                                            '-20',
+                                            style: TextStyle(
+                                                color: Colors.black, fontSize: 15.0),
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20.0),
                           ],
                         ),
                       ),
@@ -330,7 +337,6 @@ class _TrendingPageState extends State<TrendingPage> with TickerProviderStateMix
                                   FlatButton(
                                     onPressed: () {
                                       setState(() {
-                                        Navigator.pop(context);
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -350,7 +356,6 @@ class _TrendingPageState extends State<TrendingPage> with TickerProviderStateMix
                                   FlatButton(
                                     onPressed: () {
                                       setState(() {
-                                        Navigator.pop(context);
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
