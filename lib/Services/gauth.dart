@@ -8,25 +8,6 @@ import 'package:hack_app/models/UserModel.dart';
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
-Future<bool> signInWithEmailAndPassword(String email, String password) async {
-  UserCredential result =
-      await _auth.signInWithEmailAndPassword(email: email, password: password);
-  final User user = result.user;
-  if (user != null) {
-    var result = await FirebaseFirestore.instance
-        .collection('users')
-        .doc(user.uid)
-        .get();
-    if (!result.exists) {
-      print('user not found');
-      return false;
-    }
-    Constants.prefs.setString('userId', user.uid);
-  }
-  print('incorrect id and password');
-  return false;
-}
-
 Future<void> signInWithGoogle() async {
   await Firebase.initializeApp();
 
