@@ -1,8 +1,14 @@
 import 'package:connectivity_wrapper/connectivity_wrapper.dart';
 import 'package:flutter/material.dart';
+import 'package:hack_app/Utils/SharedPreferences.dart';
 import 'package:hack_app/screens/loginScreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() => runApp(MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Constants.prefs = await SharedPreferences.getInstance();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
