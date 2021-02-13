@@ -1,7 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:matrix4_transform/matrix4_transform.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -33,8 +32,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 image: AssetImage('images/background.png'),
                 fit: BoxFit.cover,
               ),
-              borderRadius:
-                  isOpen ? BorderRadius.circular(40) : BorderRadius.circular(0)),
+              borderRadius: isOpen
+                  ? BorderRadius.circular(40)
+                  : BorderRadius.circular(0)),
           child: Stack(
             children: [
               Image.asset('images/card.png'),
@@ -76,7 +76,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                         angle = 0;
                                         isOpen = false;
                                       });
-                                      ;
                                     }
                                   }),
                           Image.asset(

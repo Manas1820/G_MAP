@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:hack_app/constants.dart';
-import 'package:hack_app/models/custom_drawer/CustomDrawer.dart';
-import 'package:hack_app/models/custom_drawer/HomePage.dart';
+
 import 'package:hack_app/screens/bills_screen.dart';
 import 'package:hack_app/screens/profile_screen.dart';
 import 'package:hack_app/screens/trending_screen.dart';
