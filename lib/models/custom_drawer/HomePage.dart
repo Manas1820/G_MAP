@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ],
                         ),
                       ),
-                      SizedBox(height: 40.0),
+                      SizedBox(height: 80.0),
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 60.0),
                         alignment: Alignment.center,
@@ -122,7 +122,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ),
                         ),
                       ),
-                    ],            
+                    ],
                   ),
                 ),
               ),

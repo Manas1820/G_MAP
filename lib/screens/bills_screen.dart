@@ -1,7 +1,10 @@
+import 'dart:ui';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:matrix4_transform/matrix4_transform.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:hack_app/screens/profile_screen.dart';
+import 'package:hack_app/screens/trending_screen.dart';
 
 class BillsPage extends StatefulWidget {
   @override
@@ -9,124 +12,223 @@ class BillsPage extends StatefulWidget {
 }
 
 class _BillsPageState extends State<BillsPage> with TickerProviderStateMixin {
-  double xoffSet = 0;
-  double yoffSet = 0;
-  double angle = 0;
-
-  bool isOpen = false;
-  bool isPlaying = false;
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: AnimatedContainer(
-        transform: Matrix4Transform()
-            .translate(x: xoffSet, y: yoffSet)
-            .rotate(angle)
-            .matrix4,
-        duration: Duration(milliseconds: 250),
+      child: Material(
         child: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/background.png'),
-                fit: BoxFit.cover,
-              ),
-              borderRadius:
-                  isOpen ? BorderRadius.circular(40) : BorderRadius.circular(0)),
-          child: Stack(
-            children: [
-              Image.asset('images/card.png'),
-              Padding(
-                padding: EdgeInsets.only(left: 8.0, top: 16.0),
-                child: Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            image: DecorationImage(
+              image: AssetImage('images/background.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Padding(
+            padding: EdgeInsets.only(left: 8.0, top: 8.0),
+            child: Container(
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Image.asset(
+                    'images/icon.png',
+                    scale: 8.0,
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 60.0),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [Colors.black26, Color(0xff4CA0E0)]),
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          !isOpen
-                              ? IconButton(
-                                  icon: Icon(
-                                    Icons.menu_rounded,
-                                    color: Colors.white,
-                                    size: 40.0,
-                                  ),
-                                  onPressed: () {
-                                    setState(() {
-                                      xoffSet = 150;
-                                      yoffSet = 80;
-                                      angle = -0.2;
-                                      isOpen = true;
-                                    });
-                                  })
-                              : IconButton(
-                                  icon: Icon(Icons.arrow_back_ios,
-                                      color: Colors.white),
-                                  onPressed: () {
-                                    if (isOpen == true) {
-                                      setState(() {
-                                        xoffSet = 0;
-                                        yoffSet = 0;
-                                        angle = 0;
-                                        isOpen = false;
-                                      });
-                                      ;
-                                    }
-                                  }),
-                          Image.asset(
-                            'images/icon.png',
-                            scale: 6.0,
+                          Text(
+                            'Balance',
+                            style: GoogleFonts.rambla(
+                                color: Colors.white, fontSize: 25.0),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 10.0),
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                    colors: [Colors.black26, Color(0xff4CA0E0)]),
+                                borderRadius: BorderRadius.circular(10.0)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'INR 20,000',
+                                style: GoogleFonts.rambla(
+                                    color: Colors.white, fontSize: 25.0),
+                              ),
+                            ),
                           ),
                         ],
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 16.0, right: 16.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'BILLS',
-                                style: GoogleFonts.rambla(
-                                    color: Colors.white, fontSize: 40.0),
-                              ),
-                            ),
-                            CircleAvatar(
-                              radius: 40.0,
-                              backgroundImage: AssetImage('images/avatar.png'),
-                            ),
-                          ],
-                        ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.41,
+                        vertical: 10.0),
+                    child: Text(
+                      'Bills',
+                      style: GoogleFonts.rambla(
+                        fontSize: 30.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
-                      SizedBox(height: 40.0),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: 60.0),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                                colors: [Colors.black26, Color(0xff4CA0E0)]),
-                            borderRadius: BorderRadius.circular(20.0)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Text(
-                            'Collect your\n bills and track\nyour expenses',
-                            style: GoogleFonts.rambla(
-                                color: Colors.white, fontSize: 30.0),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        color: Colors.white),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 20.0),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 60.0),
+                          child: Material(
+                            elevation: 15.0,
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 6.0, horizontal: 40.0),
+                                  child: Text(
+                                    'Date:\t02-02-2021',
+                                    style: GoogleFonts.rambla(
+                                        color: Colors.black, fontSize: 20.0),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 8.0, left: 40.0, right: 40.0),
+                                  child: Text(
+                                    'Cost:\t₹ 200',
+                                    style: GoogleFonts.rambla(
+                                        color: Colors.black, fontSize: 20.0),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 60.0),
+                          child: Material(
+                            elevation: 15.0,
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 6.0, horizontal: 40.0),
+                                  child: Text(
+                                    'Date:\t02-02-2021',
+                                    style: GoogleFonts.rambla(
+                                        color: Colors.black, fontSize: 20.0),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 8.0, left: 40.0, right: 40.0),
+                                  child: Text(
+                                    'Cost:\t₹ 200',
+                                    style: GoogleFonts.rambla(
+                                        color: Colors.black, fontSize: 20.0),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 60.0),
+                          child: Material(
+                            elevation: 15.0,
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 6.0, horizontal: 40.0),
+                                  child: Text(
+                                    'Date:\t02-02-2021',
+                                    style: GoogleFonts.rambla(
+                                        color: Colors.black, fontSize: 20.0),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 8.0, left: 40.0, right: 40.0),
+                                  child: Text(
+                                    'Cost:\t₹ 200',
+                                    style: GoogleFonts.rambla(
+                                        color: Colors.black, fontSize: 20.0),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 60.0),
+                          child: Material(
+                            elevation: 15.0,
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      vertical: 6.0, horizontal: 40.0),
+                                  child: Text(
+                                    'Date:\t02-02-2021',
+                                    style: GoogleFonts.rambla(
+                                        color: Colors.black, fontSize: 20.0),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      bottom: 8.0, left: 40.0, right: 40.0),
+                                  child: Text(
+                                    'Cost:\t₹ 200',
+                                    style: GoogleFonts.rambla(
+                                        color: Colors.black, fontSize: 20.0),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.0,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
