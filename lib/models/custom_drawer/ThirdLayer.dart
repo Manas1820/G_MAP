@@ -2,6 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hack_app/constants.dart';
+import 'package:hack_app/models/custom_drawer/CustomDrawer.dart';
+import 'package:hack_app/models/custom_drawer/HomePage.dart';
+import 'package:hack_app/screens/bills_screen.dart';
+import 'package:hack_app/screens/profile_screen.dart';
+import 'package:hack_app/screens/trending_screen.dart';
 
 
 class ThirdLayer extends StatelessWidget {
@@ -47,10 +52,38 @@ class ThirdLayer extends StatelessWidget {
                 ),
               ),
             ),
-            Text("Home", style: kScreenOptionTextStyle),
-            Text("Profile", style: kScreenOptionTextStyle),
-            Text("Trending", style: kScreenOptionTextStyle),
-            Text("Bills", style: kScreenOptionTextStyle),
+            InkWell(
+                // onTap: () {
+                //   Navigator.push(
+                //     context,
+                //     MaterialPageRoute(builder: (context) => HomePage()),
+                //   );
+                // },
+                child: Text("Home", style: kScreenOptionTextStyle)),
+            InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                  );
+                },
+                child: Text("Profile", style: kScreenOptionTextStyle)),
+            InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TrendingPage()),
+                  );
+                },
+                child: Text("Trending", style: kScreenOptionTextStyle)),
+            InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BillsPage()),
+                  );
+                },
+                child: Text("Bills", style: kScreenOptionTextStyle)),
             SizedBox(height: 150.0)
           ],
         ),
