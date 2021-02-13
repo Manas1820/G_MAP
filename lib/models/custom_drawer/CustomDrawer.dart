@@ -16,7 +16,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
       body: Stack(
         children: [
           FirstLayer(),
-          SecondLayer(),
           ThirdLayer(),
           HomePage(),
         ],
