@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hack_app/constants.dart';
 
 class ThirdLayer extends StatelessWidget {
   @override
@@ -7,7 +9,7 @@ class ThirdLayer extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      color: Colors.transparent,
+      color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.only(left: 15.0),
         child: Column(
@@ -15,99 +17,40 @@ class ThirdLayer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-                padding: const EdgeInsets.only(top: 100.0),
-                child: Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      FlutterLogo(
-                        size: MediaQuery.of(context).size.width / 4,
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "FLUTTER",
-                            style: TextStyle(
-                                fontSize: 17,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "HOLIC",
-                            style: TextStyle(
-                                fontSize: 17,
-                                color: Colors.blue[200],
-                                fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                )),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Home Screen",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
+              padding: const EdgeInsets.only(top: 80.0),
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 70.0),
+                    Row(
+                      children: [
+                        SizedBox(width: 30.0),
+                        Text(
+                          "RI",
+                          style: TextStyle(
+                              fontSize: 40,
+                              color: Color(0xffC93DBD),
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "YO",
+                          style: TextStyle(
+                              fontSize: 40,
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    )
+                  ],
                 ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20),
-                ),
-                Text(
-                  "Screen 2",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20),
-                ),
-                Divider(
-                  color: Color(0xFF5950a0),
-                  thickness: 2,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20),
-                ),
-                Text(
-                  "About",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20),
-                ),
-                Text(
-                  "Share App",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20),
-                ),
-                Divider(
-                  color: Color(0xFF5950a0),
-                  thickness: 2,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20),
-                ),
-                Text(
-                  "Bye",
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 10),
-                ),
-              ],
+              ),
             ),
+            Text("Home", style: kScreenOptionTextStyle),
+            Text("Profile", style: kScreenOptionTextStyle),
+            Text("Trending", style: kScreenOptionTextStyle),
+            Text("Bills", style: kScreenOptionTextStyle),
+            SizedBox(height: 150.0)
           ],
         ),
       ),
