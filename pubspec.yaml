@@ -15,6 +15,7 @@ dependencies:
   image_picker: ^0.6.3+4
   matrix4_transform: ^1.1.5
   google_fonts:
+  poly: ^1.0.7+2
 
 dev_dependencies:
   flutter_test:

@@ -57,6 +57,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.5"
+  csv:
+    dependency: transitive
+    description:
+      name: csv
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.0"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -235,6 +242,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
+  poly:
+    dependency: "direct main"
+    description:
+      name: poly
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.7+2"
   process:
     dependency: transitive
     description:
