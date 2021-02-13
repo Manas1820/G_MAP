@@ -28,8 +28,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 color: Colors.blue[200],
-                borderRadius:
-                    isOpen ? BorderRadius.circular(10) : BorderRadius.circular(0)),
+                borderRadius: isOpen
+                    ? BorderRadius.circular(10)
+                    : BorderRadius.circular(0)),
             child: SafeArea(
               child: Stack(
                 children: [
@@ -54,7 +55,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             });
                           })
                       : IconButton(
-                          icon: Icon(Icons.arrow_back_ios, color: Color(0xFF1f186f)),
+                          icon: Icon(Icons.arrow_back_ios,
+                              color: Color(0xFF1f186f)),
                           onPressed: () {
                             if (isOpen == true) {
                               setState(() {
