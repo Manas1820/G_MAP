@@ -12,7 +12,8 @@ class ReceiptData extends StatefulWidget {
 class _ReceiptDataState extends State<ReceiptData> {
   File pickedImage;
   var text = '';
-
+  var receiptInfo;
+  bool receiptReady = false;
   bool imageLoaded = false;
 
   Future pickImage() async {
