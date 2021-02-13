@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:hack_app/screens/profile_screen.dart';
-import 'package:hack_app/screens/trending_screen.dart';
 
 class BillsPage extends StatefulWidget {
   @override
@@ -28,7 +26,8 @@ class _BillsPageState extends State<BillsPage> with TickerProviderStateMixin {
           child: Padding(
             padding: EdgeInsets.only(left: 8.0, top: 8.0),
             child: Container(
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(20.0)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -37,7 +36,7 @@ class _BillsPageState extends State<BillsPage> with TickerProviderStateMixin {
                     scale: 8.0,
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 60.0),
+                    margin: EdgeInsets.symmetric(horizontal: 20.0),
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
@@ -51,7 +50,7 @@ class _BillsPageState extends State<BillsPage> with TickerProviderStateMixin {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Balance',
+                            'Monthy Balance',
                             style: GoogleFonts.rambla(
                                 color: Colors.white, fontSize: 25.0),
                           ),
@@ -59,8 +58,10 @@ class _BillsPageState extends State<BillsPage> with TickerProviderStateMixin {
                             margin: EdgeInsets.symmetric(vertical: 10.0),
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                    colors: [Colors.black26, Color(0xff4CA0E0)]),
+                                gradient: LinearGradient(colors: [
+                                  Colors.black26,
+                                  Color(0xff4CA0E0)
+                                ]),
                                 borderRadius: BorderRadius.circular(10.0)),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
