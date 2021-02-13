@@ -5,8 +5,6 @@ import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:hack_app/screens/trending_screen.dart';
-import 'package:matrix4_transform/matrix4_transform.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
