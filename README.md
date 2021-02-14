@@ -31,7 +31,7 @@ Image processing -
 ### Dart
 
 - Flutter application
-- Screens: Splash screen, Onboarding, Login screen, Profile-screen, Receipt data screen, Trending-screen, Bill-screen
+  - Screens: Splash screen, Onboarding, Login screen, Profile-screen, Receipt data screen, Trending-screen, Bill-screen
 
 ## Designs
 
@@ -62,30 +62,30 @@ package 2
 ## Challanges
 
 - On how to integrate logic written in different programming languages into one application 
-- 
+- Bill identification
 
 ## Getting Started
 
 
-## 📥 Install
+### 📥 Install
 
 ```sh
 flutter pub get
 ```
 
-## 👷‍♂️ Usage
+### 👷‍♂️ Usage
 
 ```sh
 flutter run
 ```
 
-## ✨ Format code
+### ✨ Format code
 
 ```sh
 flutter format .
 ```
 
-## 🧪 Test
+### 🧪 Test
 
 ```sh
 flutter analyze .
