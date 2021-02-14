@@ -108,7 +108,7 @@ class _BillsPageState extends State<BillsPage> with TickerProviderStateMixin {
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 6.0, horizontal: 40.0),
                                   child: Text(
-                                    'Date:\t02-02-2021',
+                                    'Date:\t13-02-2021',
                                     style: GoogleFonts.rambla(
                                         color: Colors.black, fontSize: 20.0),
                                   ),
@@ -140,7 +140,7 @@ class _BillsPageState extends State<BillsPage> with TickerProviderStateMixin {
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 6.0, horizontal: 40.0),
                                   child: Text(
-                                    'Date:\t02-02-2021',
+                                    'Date:\t13-02-2021',
                                     style: GoogleFonts.rambla(
                                         color: Colors.black, fontSize: 20.0),
                                   ),
@@ -172,7 +172,7 @@ class _BillsPageState extends State<BillsPage> with TickerProviderStateMixin {
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 6.0, horizontal: 40.0),
                                   child: Text(
-                                    'Date:\t02-02-2021',
+                                    'Date:\t13-02-2021',
                                     style: GoogleFonts.rambla(
                                         color: Colors.black, fontSize: 20.0),
                                   ),
@@ -204,7 +204,7 @@ class _BillsPageState extends State<BillsPage> with TickerProviderStateMixin {
                                   padding: const EdgeInsets.symmetric(
                                       vertical: 6.0, horizontal: 40.0),
                                   child: Text(
-                                    'Date:\t02-02-2021',
+                                    'Date:\t12-02-2021',
                                     style: GoogleFonts.rambla(
                                         color: Colors.black, fontSize: 20.0),
                                   ),
