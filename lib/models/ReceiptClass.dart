@@ -13,12 +13,10 @@ class Item {
 }
 
 class ReceiptInfo {
-  List items;
   num finalTotal;
   num finalTax;
 
   ReceiptInfo(List items, num finalTotal, num finalTax) {
-    this.items = items;
     this.finalTotal = finalTotal;
     this.finalTax = finalTax;
   }

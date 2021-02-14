@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:flutter/material.dart';
 import 'package:hack_app/Utils/Parsing.dart';
+import 'package:hack_app/Utils/SharedPreferences.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
@@ -42,6 +44,18 @@ class _ReceiptDataState extends State<ReceiptData> {
     // return;
   }
 
+  sendDataToFirebase(num total) async {
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(Constants.prefs.getString('userId'))
+        .collection('bills')
+        .doc()
+        .set({
+      'dateTime': DateTime.now(),
+      'total': total,
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,34 +90,27 @@ class _ReceiptDataState extends State<ReceiptData> {
                   child: Center(
                     child: Text(
                       "Upload a Image",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                     ),
                   )),
           SizedBox(height: 10.0),
           SizedBox(height: 10.0),
-          text == ''
-              ? Text('Text will display here')
-              : Expanded(
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Text(
-                        text,
-                      ),
-                    ),
-                  ),
-                ),
+          FlatButton(
+            child: Text('Confirm'),
+            onPressed: () async {
+              await sendDataToFirebase(receiptInfo.finalTotal);
+            },
+          )
         ],
       ),
-      floatingActionButton: FlatButton.icon(
-        icon: Icon(
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
           Icons.photo_camera,
-          size: 20,
+          size: 40,
         ),
-        label: Text(''),
-        textColor: Theme.of(context).primaryColor,
-        onPressed: () {
-          pickImage();
+        onPressed: () async {
+          await pickImage();
         },
       ),
     );
