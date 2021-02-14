@@ -1,7 +1,7 @@
 import 'package:connectivity_wrapper/connectivity_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:hack_app/Utils/SharedPreferences.dart';
-import 'package:hack_app/screens/loginScreen.dart';
+import 'package:hack_app/screens/splash.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       //   ReceiptData.id: (context) => ReceiptData(),
       // },
       // initialRoute: HomeScreen.id,
-      home: GauthPage(),
+      home: Splash(),
     ));
   }
 }
