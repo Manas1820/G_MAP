@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hack_app/Utils/SharedPreferences.dart';
+import 'package:hack_app/screens/loginScreen.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -12,9 +13,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   void _onIntroEnd(context) {
     Constants.prefs.setString("firsttime", "done");
-    // Navigator.of(context).pushReplacement(
-    //   MaterialPageRoute(builder: (_) => GauthPage()),
-    // );
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (_) => GauthPage()),
+    );
   }
 
   Widget _buildImage(String assetName) {
@@ -39,14 +40,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       key: introKey,
       pages: [
         PageViewModel(
-          title: "Find friends",
-          body: "Find real friends nearby you to play with you",
+          title: "Collect all of your expenses and maximise your savings",
           image: _buildImage('bill'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Have the sporty discussions",
-          body: "Chat with friends and teammates and schedule events with them",
+          title:
+              "Increase your savings by getting the best suggestions for investing in stocks.",
           image: _buildImage('img2'),
           decoration: pageDecoration,
         ),
