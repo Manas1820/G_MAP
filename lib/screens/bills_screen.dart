@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:hack_app/screens/receipt_data_screen.dart';
 
 class BillsPage extends StatefulWidget {
   @override
@@ -224,6 +225,17 @@ class _BillsPageState extends State<BillsPage> with TickerProviderStateMixin {
                         SizedBox(
                           height: 20.0,
                         ),
+                        Center(
+                            child: FlatButton(
+                          child: Text("Add a Bill"),
+                          color: Color(0xff4CA0E0),
+                          onPressed: () async {
+                            await Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ReceiptData()));
+                          },
+                        ))
                       ],
                     ),
                   ),
