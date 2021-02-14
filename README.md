@@ -37,11 +37,14 @@ Image processing -
 
 - https://www.figma.com/proto/q7cCUF4cYHa5IgQTwIbx79/Euro?node-id=19%3A0&scaling=scale-down
 
-## Picture/Screenshot 1
+## Screens
 <img src="https://i.imgur.com/KzrjiRz.jpg">
+<img src="https://i.imgur.com/cOuOOLY.jpg">
+<img src="https://i.imgur.com/5DqSOR7.jpg">
+<img src="https://i.imgur.com/LNgsArZ.jpg">
 
-## Picture/Screenshot 2
-<img src="" >
+## Functionalities
+<img src="https://i.imgur.com/N4h9yHe.jpg" >
   
 
 ## Prerequisites
