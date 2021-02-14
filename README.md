@@ -1,8 +1,3 @@
-## Getting Started
-
-## Designs
-
-- https://www.figma.com/proto/q7cCUF4cYHa5IgQTwIbx79/Euro?node-id=19%3A0&scaling=scale-down
 # Riyo
 
 Riyo circles on how you can increase your saving and also removing the stigma around stocks.
@@ -38,8 +33,12 @@ Image processing -
 - Flutter application
 - Screens: Splash screen, Onboarding, Login screen, Profile-screen, Receipt data screen, Trending-screen, Bill-screen
 
+## Designs
+
+- https://www.figma.com/proto/q7cCUF4cYHa5IgQTwIbx79/Euro?node-id=19%3A0&scaling=scale-down
+
 ## Picture/Screenshot 1
-<img src="">
+<img src="https://i.imgur.com/KzrjiRz.jpg">
 
 ## Picture/Screenshot 2
 <img src="" >
