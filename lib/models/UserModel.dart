@@ -9,6 +9,7 @@ class UserDetails {
   double maxLimit;
   double profit;
   double currBalance;
+  String ph;
 
   UserDetails(
       {this.userId,
@@ -18,12 +19,13 @@ class UserDetails {
       this.gender,
       this.maxLimit,
       this.profit,
-      this.currBalance});
+      this.currBalance,
+      this.ph});
 
   UserDetails.loadUser(this.userId, this.name, this.profileImage, this.emailId,
-      this.gender, this.maxLimit, this.profit, this.currBalance);
+      this.gender, this.maxLimit, this.profit, this.currBalance, this.ph);
 
-  UserDetails.newuser(userId, name, profileImage, emailId) {
+  UserDetails.newuser(userId, name, profileImage, emailId, ph) {
     this.userId = userId;
     this.name = name;
     this.profileImage = profileImage;
@@ -32,6 +34,7 @@ class UserDetails {
     this.maxLimit = 0;
     this.profit = 0;
     this.currBalance = 0;
+    this.ph = ph;
   }
 
   Map<String, dynamic> toJson() => {
@@ -42,7 +45,8 @@ class UserDetails {
         'gender': this.gender,
         'limit': this.maxLimit,
         'profit': this.profit,
-        'balance': this.currBalance
+        'balance': this.currBalance,
+        'ph': this.ph ?? ""
       };
   factory UserDetails.fromJson(QueryDocumentSnapshot snapshot) {
     var data = snapshot.data();
@@ -54,6 +58,7 @@ class UserDetails {
         gender: data['gender'],
         maxLimit: data['limit'],
         profit: data['profit'],
-        currBalance: data['balance']);
+        currBalance: data['balance'],
+        ph: data['ph']);
   }
 }
