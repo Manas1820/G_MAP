@@ -31,12 +31,16 @@ Future<void> signInWithGoogle() async {
         .get();
 
     if (!result.exists) {
-      Constants.prefs.setString('userId', user.uid);
       await FirebaseFirestore.instance.collection('users').doc(user.uid).set(
-          UserDetails.newuser(
-                  user.uid, user.displayName, user.photoURL, user.email)
+          UserDetails.newuser(user.uid, user.displayName, user.photoURL,
+                  user.email, user.phoneNumber)
               .toJson());
+      Constants.prefs.setString('userId', user.uid);
+      Constants.prefs.setString('username', user.displayName);
+      Constants.prefs.setString('profileImage', user.photoURL);
     }
+    Constants.prefs.setString('username', user.displayName);
+    Constants.prefs.setString('profileImage', user.photoURL);
     Constants.prefs.setString('userId', user.uid);
   }
 }
