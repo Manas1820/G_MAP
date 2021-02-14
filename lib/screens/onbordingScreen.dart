@@ -41,10 +41,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       pages: [
         PageViewModel(
           title: "Collect all of your expenses and maximise your savings",
+          body: "",
           image: _buildImage('bill'),
           decoration: pageDecoration,
         ),
         PageViewModel(
+          body: "",
           title:
               "Increase your savings by getting the best suggestions for investing in stocks.",
           image: _buildImage('img2'),
