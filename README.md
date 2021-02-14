@@ -17,7 +17,7 @@ Riyo circles on how you can increase your saving and also removing the stigma ar
 
 * We have used flutter for our app
 * Firebase for oAuth
-* ML models for 
+* ML models for bill image processing and stock prediction
 
 ## Technology Stack  
 
@@ -49,15 +49,6 @@ Image processing -
 ## Functionalities
 <img src="https://i.imgur.com/N4h9yHe.jpg" >
   
-
-## Prerequisites
-
-The following dependencies should be installed to run the code. 
-
-```
-package 1
-package 2
-```
 
 ## Challanges
 
