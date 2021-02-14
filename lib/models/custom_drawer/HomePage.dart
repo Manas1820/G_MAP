@@ -1,5 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:hack_app/Utils/SharedPreferences.dart';
 import 'package:matrix4_transform/matrix4_transform.dart';
 
 class HomePage extends StatefulWidget {
@@ -92,14 +93,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
-                                'Welcome,\nPisa Noyak',
+                                'Welcome,\n' +
+                                    Constants.prefs.getString('username'),
                                 style: GoogleFonts.rambla(
                                     color: Colors.white, fontSize: 40.0),
                               ),
                             ),
                             CircleAvatar(
                               radius: 40.0,
-                              backgroundImage: AssetImage('images/avatar.png'),
+                              backgroundImage: NetworkImage(
+                                  Constants.prefs.getString('profileImage')),
                             ),
                           ],
                         ),
